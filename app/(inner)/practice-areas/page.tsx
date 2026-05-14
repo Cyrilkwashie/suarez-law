@@ -75,6 +75,55 @@ const areas = [
     image: "https://images.unsplash.com/photo-1608487583634-0f31766e4cb1?w=700&q=80",
     href: "/practice-areas/pedestrian-accidents",
   },
+  {
+    title: "Motorcycle Accidents",
+    description:
+      "Motorcyclists face unique dangers and unfair bias. We silence the blame-the-rider narrative and fight for every dollar you deserve.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    href: "/practice-areas/motorcycle-accidents",
+  },
+  {
+    title: "Premises Liability",
+    description:
+      "Swimming pools, parking lots, defective stairs — property owners are legally responsible for maintaining safe premises for all visitors.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80",
+    href: "/practice-areas/premises-liability",
+  },
+  {
+    title: "Cruise Ship Accidents",
+    description:
+      "Cruise ship injury claims are governed by maritime law and strict filing deadlines — sometimes as short as one year. We act fast.",
+    image: "https://images.unsplash.com/photo-1548574505-5e239809ee19?w=700&q=80",
+    href: "/practice-areas/cruise-ship-accidents",
+  },
+  {
+    title: "Spinal Cord Injury",
+    description:
+      "Spinal injuries can result in partial or complete paralysis requiring a lifetime of care. We fight for the full value of your future needs.",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&q=80",
+    href: "/practice-areas/spinal-cord-injury",
+  },
+  {
+    title: "Train Accidents",
+    description:
+      "Railroad and public transit accidents involve complex liability across multiple parties. Our attorneys have the experience to navigate these cases.",
+    image: "https://images.unsplash.com/photo-1474487548417-781cb6d646b3?w=700&q=80",
+    href: "/practice-areas/train-accidents",
+  },
+  {
+    title: "Product Liability",
+    description:
+      "Defective products cause serious harm. We hold manufacturers, distributors, and retailers accountable for putting dangerous goods on the market.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80",
+    href: "/practice-areas/product-liability",
+  },
+  {
+    title: "Serious Injury",
+    description:
+      "Burn injuries, amputations, and other catastrophic harms require specialized legal counsel and long-term planning. We deliver results.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=700&q=80",
+    href: "/practice-areas/serious-injury",
+  },
 ];
 
 export default function PracticeAreasPage() {
