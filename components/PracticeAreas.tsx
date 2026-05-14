@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Car,
@@ -12,6 +13,7 @@ import {
   Anchor,
   Brain,
   PersonStanding,
+  ArrowRight,
 } from "lucide-react";
 
 const areas = [
@@ -20,54 +22,63 @@ const areas = [
     title: "Car Accidents",
     desc: "Rear-ends, T-bones, DUI crashes, Uber & Lyft.",
     image: "https://images.unsplash.com/photo-1643934398344-d4ed2add8a27?w=700&q=80",
+    href: "/miami-car-accident-attorney",
   },
   {
     icon: Bike,
     title: "Bicycle & Motorcycle",
     desc: "Protecting riders when drivers are at fault.",
     image: "https://images.unsplash.com/photo-1558981001-5864b3250a69?w=700&q=80",
+    href: "/practice-areas/bicycle-motorcycle",
   },
   {
     icon: Truck,
     title: "Truck Accidents",
     desc: "Complex commercial trucking liability.",
     image: "https://images.unsplash.com/photo-1720127601642-7c3a7ba88f5f?w=700&q=80",
+    href: "/practice-areas/truck-accidents",
   },
   {
     icon: AlertCircle,
     title: "Slip & Fall",
     desc: "Premises liability and negligent property owners.",
     image: "https://images.unsplash.com/photo-1770802921660-24faec94b4c0?w=700&q=80",
+    href: "/practice-areas/slip-and-fall",
   },
   {
     icon: Stethoscope,
     title: "Medical Malpractice",
     desc: "Holding healthcare providers accountable.",
     image: "https://images.unsplash.com/photo-1770836037423-d48c88ec60b9?w=700&q=80",
+    href: "/practice-areas/medical-malpractice",
   },
   {
     icon: Users,
     title: "Wrongful Death",
     desc: "Justice and compensation for families.",
     image: "https://images.unsplash.com/photo-1607352196068-2eeca6389a26?w=700&q=80",
+    href: "/practice-areas/wrongful-death",
   },
   {
     icon: Anchor,
     title: "Boating & Cruise",
     desc: "Maritime accident expertise in Florida.",
     image: "https://images.unsplash.com/photo-1568033043438-4d6a22d928aa?w=700&q=80",
+    href: "/practice-areas/boating-cruise",
   },
   {
     icon: Brain,
     title: "Brain & Spinal",
     desc: "Catastrophic injury representation.",
     image: "https://images.unsplash.com/photo-1758691463110-697a814b2033?w=700&q=80",
+    href: "/practice-areas/brain-spinal",
   },
   {
     icon: PersonStanding,
     title: "Pedestrian Accidents",
     desc: "Full advocacy for those struck on foot.",
     image: "https://images.unsplash.com/photo-1608487583634-0f31766e4cb1?w=700&q=80",
+    href: "/practice-areas/pedestrian-accidents",
   },
 ];
 
@@ -140,8 +151,11 @@ export default function PracticeAreas() {
               <motion.div
                 key={area.title}
                 variants={fadeUp}
-                className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-sky-900/10 hover:-translate-y-1 transition-all duration-300 cursor-default"
               >
+                <Link
+                  href={area.href}
+                  className="group block bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-sky-900/10 hover:-translate-y-1 transition-all duration-300"
+                >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <Image
@@ -160,14 +174,20 @@ export default function PracticeAreas() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold text-ink mb-2">
-                    {area.title}
-                  </h3>
-                  <p className="font-body text-sm text-ink-muted leading-relaxed">
-                    {area.desc}
-                  </p>
+                <div className="p-6 flex items-end justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-ink mb-2">
+                      {area.title}
+                    </h3>
+                    <p className="font-body text-sm text-ink-muted leading-relaxed">
+                      {area.desc}
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-50 group-hover:bg-sky-600 flex items-center justify-center transition-colors duration-300">
+                    <ArrowRight size={14} className="text-sky-600 group-hover:text-white transition-colors duration-300" />
+                  </div>
                 </div>
+                </Link>
               </motion.div>
             );
           })}
