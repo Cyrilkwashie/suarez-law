@@ -489,60 +489,69 @@ export default async function PracticeAreaPage({ params }: Props) {
             ))}
           </div>
         </section>
+      </InnerPageLayout>
 
-        {/* Why Suarez & Montero */}
-        <section className="mb-10">
-          <div className="bg-deep rounded-2xl p-7 text-white">
-            <div className="flex items-center gap-3 mb-4">
-              <ShieldCheck size={22} className="text-sky-400 shrink-0" />
-              <h2 className="font-display font-bold text-xl">
-                Why Suarez &amp; Montero?
-              </h2>
+      {/* Why Suarez & Montero — full-width dark section */}
+      <section className="bg-deep py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: text */}
+            <div>
+              <p className="font-body text-xs tracking-[0.3em] text-sky-400 uppercase mb-4">
+                Why Choose Us
+              </p>
+              <div className="flex items-start gap-3 mb-6">
+                <ShieldCheck size={28} className="text-sky-400 shrink-0 mt-1" />
+                <h2 className="font-display font-bold text-3xl md:text-4xl text-white leading-tight">
+                  Why Suarez &amp; Montero?
+                </h2>
+              </div>
+              <p className="font-body text-sky-100/80 leading-relaxed text-base">
+                {area.whyUs}
+              </p>
             </div>
-            <p className="font-body text-sky-100/80 leading-relaxed text-sm mb-5">
-              {area.whyUs}
-            </p>
-            <div className="grid grid-cols-3 gap-4 pt-5 border-t border-white/10">
-              <div className="text-center">
-                <p className="font-display font-bold text-sky-400 text-2xl">$100M+</p>
-                <p className="font-body text-xs text-sky-200/60 mt-1">Recovered</p>
-              </div>
-              <div className="text-center">
-                <p className="font-display font-bold text-sky-400 text-2xl">24+</p>
-                <p className="font-body text-xs text-sky-200/60 mt-1">Years Experience</p>
-              </div>
-              <div className="text-center">
-                <p className="font-display font-bold text-sky-400 text-2xl">500+</p>
-                <p className="font-body text-xs text-sky-200/60 mt-1">Five-Star Reviews</p>
-              </div>
+
+            {/* Right: stats */}
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                { value: "$100M+", label: "Recovered for clients" },
+                { value: "24+", label: "Years of experience" },
+                { value: "500+", label: "Five-star reviews" },
+              ].map(({ value, label }) => (
+                <div key={value} className="text-center bg-white/5 rounded-2xl p-6 border border-white/10">
+                  <p className="font-display font-bold text-sky-400 text-3xl md:text-4xl mb-2">
+                    {value}
+                  </p>
+                  <p className="font-body text-xs text-sky-200/60 leading-snug">{label}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Trust badges */}
-        <section className="mb-2">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {/* Trust badges — full-width light section */}
+      <section className="bg-white py-10 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { icon: Clock, label: "Available 24/7", sub: "Day or night, we answer" },
               { icon: Star, label: "No Fee Unless We Win", sub: "Zero upfront cost to you" },
-              { icon: ShieldCheck, label: "Bilingual Service", sub: "English & EspaÃ±ol" },
+              { icon: ShieldCheck, label: "Bilingual Service", sub: "English & Español" },
             ].map(({ icon: Icon, label, sub }) => (
-              <div
-                key={label}
-                className="flex items-center gap-3 bg-white border border-slate-100 rounded-xl px-4 py-3.5"
-              >
-                <div className="w-9 h-9 bg-sky-50 rounded-lg flex items-center justify-center shrink-0">
-                  <Icon size={17} className="text-sky-600" />
+              <div key={label} className="flex items-center gap-4 p-5 rounded-2xl border border-slate-100 hover:border-sky-200 transition-colors">
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Icon size={22} className="text-sky-600" />
                 </div>
                 <div>
-                  <p className="font-body font-semibold text-ink text-sm">{label}</p>
-                  <p className="font-body text-xs text-ink-subtle">{sub}</p>
+                  <p className="font-body font-semibold text-ink">{label}</p>
+                  <p className="font-body text-sm text-ink-muted">{sub}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
-      </InnerPageLayout>
+        </div>
+      </section>
 
       <FaqAccordion
         items={area.faqs}
