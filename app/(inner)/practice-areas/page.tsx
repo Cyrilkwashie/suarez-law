@@ -1,23 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import InnerPageLayout from "@/components/InnerPageLayout";
 import ConsultationBanner from "@/components/ConsultationBanner";
-import {
-  Car,
-  Bike,
-  Truck,
-  AlertCircle,
-  Stethoscope,
-  Users,
-  Anchor,
-  Brain,
-  PersonStanding,
-  Scale,
-  Train,
-  ShipIcon,
-  Flame,
-  Umbrella,
-  Zap,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,109 +13,67 @@ export const metadata: Metadata = {
 
 const areas = [
   {
-    icon: Car,
-    title: "Auto Accidents",
+    title: "Car Accidents",
     description:
-      "Florida roads are among the nation's most dangerous. We fight aggressively for victims of car, SUV, and rideshare crashes.",
-    href: "/miami-auto-accident-attorney",
+      "Florida roads are among the nation's most dangerous. We fight aggressively for victims of car, SUV, and rideshare crashes throughout South Florida.",
+    image: "https://images.unsplash.com/photo-1643934398344-d4ed2add8a27?w=700&q=80",
+    href: "/miami-car-accident-attorney",
   },
   {
-    icon: Bike,
-    title: "Bicycle Accidents",
+    title: "Bicycle & Motorcycle",
     description:
-      "Cyclists have full rights on Miami roads. When drivers fail to share the road, we hold them accountable.",
-    href: "/miami-bicycle-accident-attorney",
+      "Cyclists and riders have full rights on Miami roads. When drivers fail to share the road, we hold them accountable and fight for maximum compensation.",
+    image: "https://images.unsplash.com/photo-1558981001-5864b3250a69?w=700&q=80",
+    href: "/practice-areas/bicycle-motorcycle",
   },
   {
-    icon: Truck,
     title: "Truck Accidents",
     description:
-      "Commercial truck collisions cause catastrophic injuries. We handle the complexity of multi-party trucking litigation.",
-    href: "/miami-truck-accident-lawyer",
+      "Commercial truck collisions cause catastrophic injuries. We handle multi-party trucking litigation and pursue every liable party.",
+    image: "https://images.unsplash.com/photo-1720127601642-7c3a7ba88f5f?w=700&q=80",
+    href: "/practice-areas/truck-accidents",
   },
   {
-    icon: AlertCircle,
     title: "Slip & Fall",
     description:
-      "Property owners must keep premises safe. When negligence causes a fall, we pursue full compensation.",
-    href: "/miami-slip-fall-accident-attorney",
+      "Property owners must keep premises safe. When negligence causes a fall — wet floors, broken stairs, poor lighting — we pursue full compensation.",
+    image: "https://images.unsplash.com/photo-1770802921660-24faec94b4c0?w=700&q=80",
+    href: "/practice-areas/slip-and-fall",
   },
   {
-    icon: Stethoscope,
     title: "Medical Malpractice",
     description:
-      "Doctors and hospitals can be held accountable for preventable errors, misdiagnosis, and surgical mistakes.",
-    href: "/miami-medical-malpractice-attorney",
+      "Doctors and hospitals must be held accountable for preventable errors, misdiagnosis, and surgical mistakes that cause lasting harm.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80",
+    href: "/practice-areas/medical-malpractice",
   },
   {
-    icon: Users,
     title: "Wrongful Death",
     description:
-      "We stand with families who have lost a loved one due to someone else's negligence or recklessness.",
-    href: "/miami-wrongful-death-attorney",
+      "We stand with families who have lost a loved one — pursuing justice and the financial security your family deserves.",
+    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=700&q=80",
+    href: "/practice-areas/wrongful-death",
   },
   {
-    icon: Anchor,
-    title: "Boating Accidents",
+    title: "Boating & Cruise",
     description:
-      "South Florida's waterways see thousands of boating accidents yearly. We know maritime personal injury law.",
-    href: "/miami-boating-accident-attorney",
+      "South Florida's waterways see thousands of boating accidents yearly. We also handle cruise ship injury claims with strict maritime deadlines.",
+    image: "https://images.unsplash.com/photo-1568033043438-4d6a22d928aa?w=700&q=80",
+    href: "/practice-areas/boating-cruise",
   },
   {
-    icon: Brain,
-    title: "Brain Injury",
+    title: "Brain & Spinal Injury",
     description:
-      "Traumatic brain injuries require lifetime care. We secure the maximum recovery needed for long-term treatment.",
-    href: "/miami-brain-injury-attorney",
+      "Traumatic brain and spinal cord injuries require lifetime care. We secure maximum recovery working with medical and life-care experts.",
+    image: "https://images.unsplash.com/photo-1758691463110-697a814b2033?w=700&q=80",
+    href: "/practice-areas/brain-spinal",
   },
   {
-    icon: PersonStanding,
     title: "Pedestrian Accidents",
     description:
-      "Pedestrians struck by vehicles suffer devastating injuries. We fight for full and fair compensation.",
-    href: "/miami-pedestrian-accident-attorney",
-  },
-  {
-    icon: Scale,
-    title: "Premises Liability",
-    description:
-      "Swimming pools, parking lots, defective stairs — property owners are responsible for visitor safety.",
-    href: "/miami-premises-liability-attorney",
-  },
-  {
-    icon: Train,
-    title: "Train Accidents",
-    description:
-      "Railroad and public transit accidents involve complex liability. Our attorneys have the experience to navigate these cases.",
-    href: "/miami-train-accident-attorney",
-  },
-  {
-    icon: ShipIcon,
-    title: "Cruise Ship Accidents",
-    description:
-      "Cruise ship injury claims are governed by maritime law and strict deadlines — we act fast to protect your rights.",
-    href: "/miami-cruise-ship-accident-attorney",
-  },
-  {
-    icon: Zap,
-    title: "Spinal Cord Injury",
-    description:
-      "Spinal injuries can be life-altering. We pursue compensation for medical care, lost income, and quality of life.",
-    href: "/miami-spinal-cord-injury-attorney",
-  },
-  {
-    icon: Umbrella,
-    title: "Product Liability",
-    description:
-      "Defective products cause serious harm. We hold manufacturers and distributors accountable for dangerous goods.",
-    href: "/miami-product-liability-attorney",
-  },
-  {
-    icon: Flame,
-    title: "Serious Injury",
-    description:
-      "Burn injuries, amputations, and other catastrophic harms require specialized legal counsel. We deliver results.",
-    href: "/miami-serious-injury-lawyer",
+      "Pedestrians struck by vehicles suffer devastating injuries. Florida has some of the highest pedestrian fatality rates in the nation — we fight back.",
+    image: "https://images.unsplash.com/photo-1608487583634-0f31766e4cb1?w=700&q=80",
+    href: "/practice-areas/pedestrian-accidents",
   },
 ];
 
@@ -144,41 +87,45 @@ export default function PracticeAreasPage() {
       >
         <p className="text-ink-muted font-body leading-relaxed mb-10">
           No matter how complex your case, Suarez &amp; Montero has the experience, resources,
-          and determination to fight for maximum compensation. Browse our practice areas below
-          — and remember: every consultation is free and you pay nothing unless we win.
+          and determination to fight for maximum compensation. Every consultation is free and
+          you pay nothing unless we win.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {areas.map((area) => {
-            const Icon = area.icon;
-            return (
-              <Link
-                key={area.href}
-                href={area.href}
-                className="group bg-white border border-sky-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-sky-900/10 hover:border-sky-200 transition-all"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-sky-600 transition-colors">
-                    <Icon
-                      size={20}
-                      className="text-sky-600 group-hover:text-white transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-lg text-ink mb-1 group-hover:text-sky-600 transition-colors">
-                      {area.title}
-                    </h3>
-                    <p className="font-body text-sm text-ink-muted leading-relaxed">
-                      {area.description}
-                    </p>
-                    <span className="mt-3 inline-block text-sky-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      Learn more →
-                    </span>
-                  </div>
+          {areas.map((area) => (
+            <Link
+              key={area.href}
+              href={area.href}
+              className="group bg-white border border-sky-100 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-sky-900/10 hover:border-sky-200 transition-all"
+            >
+              {/* Image */}
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={area.image}
+                  alt={area.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep/60 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-4">
+                  <h3 className="font-display font-bold text-white text-lg leading-tight drop-shadow">
+                    {area.title}
+                  </h3>
                 </div>
-              </Link>
-            );
-          })}
+              </div>
+
+              {/* Body */}
+              <div className="p-5">
+                <p className="font-body text-sm text-ink-muted leading-relaxed mb-4">
+                  {area.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sky-600 text-sm font-medium group-hover:gap-2.5 transition-all">
+                  Learn more <ArrowRight size={14} />
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </InnerPageLayout>
 

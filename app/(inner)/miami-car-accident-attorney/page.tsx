@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import InnerPageLayout from "@/components/InnerPageLayout";
 import ConsultationBanner from "@/components/ConsultationBanner";
 import ProcessSteps from "@/components/ProcessSteps";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
-import { Car } from "lucide-react";
+import { Car, CheckCircle2, ShieldCheck, Clock, Star } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -70,6 +71,24 @@ export default function CarAccidentPage() {
         subtitle="Aggressive representation for accident victims throughout Miami-Dade, Broward, and Palm Beach counties."
         breadcrumb={[{ label: "Home", href: "/" }, { label: "Car Accident" }]}
       >
+        {/* Feature image */}
+        <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-10 shadow-lg">
+          <Image
+            src="https://images.unsplash.com/photo-1643934398344-d4ed2add8a27?w=1200&q=80"
+            alt="Miami Car Accident Attorney"
+            fill
+            sizes="(max-width: 1024px) 100vw, 740px"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent" />
+          <div className="absolute bottom-4 left-5">
+            <span className="font-body text-xs text-white/70 tracking-wider uppercase">
+              Suarez &amp; Montero — South Florida
+            </span>
+          </div>
+        </div>
+
         {/* Intro */}
         <section className="mb-10">
           <p className="text-ink-muted font-body leading-relaxed mb-4">
@@ -79,11 +98,33 @@ export default function CarAccidentPage() {
           </p>
           <p className="text-ink-muted font-body leading-relaxed mb-4">
             At Suarez &amp; Montero, we have recovered{" "}
-            <strong className="text-ink">over $50 million</strong> for accident victims across
+            <strong className="text-ink">over $100 million</strong> for accident victims across
             South Florida. Our attorneys are available{" "}
             <strong className="text-ink">24 hours a day, 7 days a week</strong> — and you pay
             nothing unless we win your case.
           </p>
+        </section>
+
+        {/* What You Can Recover */}
+        <section className="mb-10">
+          <h2 className="font-display font-bold text-2xl text-ink mb-6">What You Can Recover</h2>
+          <div className="bg-sky-50 border border-sky-100 rounded-2xl p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Emergency room and medical bills",
+                "Vehicle repair or replacement",
+                "Lost wages and future earning capacity",
+                "Pain, suffering, and emotional distress",
+                "Permanent disability or disfigurement",
+                "Loss of enjoyment of life",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 size={18} className="text-sky-600 mt-0.5 shrink-0" />
+                  <span className="font-body text-sm text-ink-muted leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Sub-practice grid */}
@@ -107,6 +148,57 @@ export default function CarAccidentPage() {
 
         {/* Process steps */}
         <ProcessSteps />
+
+        {/* Why Suarez & Montero */}
+        <section className="mb-10">
+          <div className="bg-deep rounded-2xl p-7 text-white">
+            <div className="flex items-center gap-3 mb-4">
+              <ShieldCheck size={22} className="text-sky-400 shrink-0" />
+              <h2 className="font-display font-bold text-xl">Why Suarez &amp; Montero?</h2>
+            </div>
+            <p className="font-body text-sky-100/80 leading-relaxed text-sm mb-5">
+              Miami car accident cases are won or lost on evidence and negotiating power. We have
+              the resources to take on major insurance carriers — and the trial record to back it
+              up. With over 24 years handling South Florida car accident claims, we know every
+              tactic insurers use to deny or minimize your case. We fight back.
+            </p>
+            <div className="grid grid-cols-3 gap-4 pt-5 border-t border-white/10">
+              <div className="text-center">
+                <p className="font-display font-bold text-sky-400 text-2xl">$100M+</p>
+                <p className="font-body text-xs text-sky-200/60 mt-1">Recovered</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display font-bold text-sky-400 text-2xl">24+</p>
+                <p className="font-body text-xs text-sky-200/60 mt-1">Years Experience</p>
+              </div>
+              <div className="text-center">
+                <p className="font-display font-bold text-sky-400 text-2xl">500+</p>
+                <p className="font-body text-xs text-sky-200/60 mt-1">Five-Star Reviews</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust badges */}
+        <section className="mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { icon: Clock, label: "Available 24/7", sub: "Day or night, we answer" },
+              { icon: Star, label: "No Fee Unless We Win", sub: "Zero upfront cost to you" },
+              { icon: ShieldCheck, label: "Bilingual Service", sub: "English & Español" },
+            ].map(({ icon: Icon, label, sub }) => (
+              <div key={label} className="flex items-center gap-3 bg-white border border-slate-100 rounded-xl px-4 py-3.5">
+                <div className="w-9 h-9 bg-sky-50 rounded-lg flex items-center justify-center shrink-0">
+                  <Icon size={17} className="text-sky-600" />
+                </div>
+                <div>
+                  <p className="font-body font-semibold text-ink text-sm">{label}</p>
+                  <p className="font-body text-xs text-ink-subtle">{sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* FAQ */}
         <FaqAccordion items={faqs} heading="Car Accident FAQ" />
