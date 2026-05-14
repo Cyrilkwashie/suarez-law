@@ -14,16 +14,16 @@ interface InnerPageLayoutProps {
 }
 
 const practiceLinks = [
-  { label: "Auto Accidents", href: "/miami-auto-accident-attorney" },
   { label: "Car Accidents", href: "/miami-car-accident-attorney" },
-  { label: "Bicycle Accidents", href: "/miami-bicycle-accident-attorney" },
-  { label: "Truck Accidents", href: "/miami-truck-accident-lawyer" },
-  { label: "Motorcycle Accidents", href: "/motorcycle-accident-lawyers-miami" },
-  { label: "Slip and Fall", href: "/miami-slip-fall-accident-attorney" },
-  { label: "Wrongful Death", href: "/miami-wrongful-death-attorney" },
-  { label: "Medical Malpractice", href: "/miami-medical-malpractice-attorney" },
-  { label: "Pedestrian Accidents", href: "/miami-pedestrian-accident-attorney" },
-  { label: "Premises Liability", href: "/miami-premises-liability-attorney" },
+  { label: "Bicycle & Motorcycle", href: "/practice-areas/bicycle-motorcycle" },
+  { label: "Truck Accidents", href: "/practice-areas/truck-accidents" },
+  { label: "Slip & Fall", href: "/practice-areas/slip-and-fall" },
+  { label: "Medical Malpractice", href: "/practice-areas/medical-malpractice" },
+  { label: "Wrongful Death", href: "/practice-areas/wrongful-death" },
+  { label: "Boating & Cruise", href: "/practice-areas/boating-cruise" },
+  { label: "Brain & Spinal Injury", href: "/practice-areas/brain-spinal" },
+  { label: "Pedestrian Accidents", href: "/practice-areas/pedestrian-accidents" },
+  { label: "All Practice Areas", href: "/practice-areas" },
 ];
 
 export default function InnerPageLayout({

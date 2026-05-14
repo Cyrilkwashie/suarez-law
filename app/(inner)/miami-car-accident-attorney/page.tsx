@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import InnerPageLayout from "@/components/InnerPageLayout";
 import ConsultationBanner from "@/components/ConsultationBanner";
-import ProcessSteps from "@/components/ProcessSteps";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import { Car, CheckCircle2, ShieldCheck, Clock, Star } from "lucide-react";
 import type { Metadata } from "next";
@@ -146,8 +145,29 @@ export default function CarAccidentPage() {
           </div>
         </section>
 
-        {/* Process steps */}
-        <ProcessSteps />
+        {/* How We Handle Your Case */}
+        <section className="mb-10">
+          <h2 className="font-display font-bold text-2xl text-ink mb-6">
+            How We Handle Your Case
+          </h2>
+          <div className="space-y-4">
+            {[
+              { num: "01", title: "Tell Us What Happened", desc: "Share your story in a free, no-obligation consultation. We listen first — then we advise." },
+              { num: "02", title: "We Build Your Case", desc: "Evidence, expert witnesses, and a tailored strategy — quietly assembled in your favor while you focus on healing." },
+              { num: "03", title: "We Fight for Compensation", desc: "Negotiation or trial — we pursue the full value of your claim, relentlessly, until you are paid what you deserve." },
+            ].map((step) => (
+              <div key={step.num} className="flex gap-5 bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
+                <div className="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center shrink-0">
+                  <span className="font-display font-bold text-white text-sm">{step.num}</span>
+                </div>
+                <div>
+                  <p className="font-display font-semibold text-ink text-base mb-1">{step.title}</p>
+                  <p className="font-body text-sm text-ink-muted leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Why Suarez & Montero */}
         <section className="mb-10">
@@ -200,9 +220,13 @@ export default function CarAccidentPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <FaqAccordion items={faqs} heading="Car Accident FAQ" />
       </InnerPageLayout>
+
+      <FaqAccordion
+        items={faqs}
+        heading="Car Accident FAQ"
+        eyebrow="FAQ"
+      />
 
       <ConsultationBanner heading="Were You in a Miami Car Accident?" subtext="Call now for a free case evaluation. No fee unless we win — guaranteed." />
     </>
