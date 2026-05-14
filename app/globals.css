@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --white:        #FFFFFF;
+  --cream:        #F8F6F2;
+  --sky-50:       #F0F7FF;
+  --sky-100:      #E0EFFF;
+  --sky-200:      #BAD9FF;
+  --sky-500:      #3B9AE1;
+  --sky-600:      #1E7EC8;
+  --sky-700:      #1563A0;
+  --ink:          #0D1117;
+  --ink-muted:    #4A5568;
+  --ink-subtle:   #718096;
+  --deep:         #0A1628;
+  --gold:         #C9973A;
+  --gold-light:   #E8B96A;
+  --border:       #E2E8F0;
+}
+
+@theme {
+  --color-cream:        #F8F6F2;
+  --color-deep:         #0A1628;
+  --color-ink:          #0D1117;
+  --color-ink-muted:    #4A5568;
+  --color-ink-subtle:   #718096;
+  --color-gold:         #C9973A;
+  --color-gold-light:   #E8B96A;
+  --color-sky-50:       #F0F7FF;
+  --color-sky-100:      #E0EFFF;
+  --color-sky-200:      #BAD9FF;
+  --color-sky-500:      #3B9AE1;
+  --color-sky-600:      #1E7EC8;
+  --color-sky-700:      #1563A0;
+  --font-display:       var(--font-playfair), Georgia, serif;
+  --font-body:          var(--font-inter), system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
